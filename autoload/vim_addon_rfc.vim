@@ -1,7 +1,7 @@
 if !exists('g:vim_addon_rfc') | let g:vim_addon_rfc = {} | endif | let s:c = g:vim_addon_rfc
 
 fun! vim_addon_rfc#OpenRFC(number)
-  let dir = library#Call(s:c.cache_dir)
+  let dir = funcref#Call(s:c.cache_dir)
   if !isdirectory(dir) | call mkdir(dir, 'p') | endif
   let file_on_disk=dir.'/RFC'.a:number.'.txt'
 
